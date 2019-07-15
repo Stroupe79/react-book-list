@@ -10,6 +10,7 @@ function Search () {
             Type a book title or author to search!
             </div>
             <input type="search"></input>
+            <button className="btn btn-primary">Search!</button>
         </div>
         </div>
     );

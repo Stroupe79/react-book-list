@@ -1,6 +1,7 @@
 .search-panel {
     border-style: solid;
     border-color: green;
+    text-align: center;
 }
 
 input {
