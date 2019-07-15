@@ -1,0 +1,40 @@
+/* ul {
+    list-style-type: none;
+    margin: 0rem;
+    padding: 4rem;
+    text-align: left;
+  }
+
+  li {
+    float: left;
+    display: inline;
+  }
+
+  li a {
+    display: block;
+    padding: 8px;
+    background-color: #dddddd;
+  } */
+
+  
+  ul {
+    list-style-type: none;
+    margin: 10px;
+    padding: 10px;
+    overflow: hidden;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    color: yellow;
+    display: block;
+    padding: 8px;
+    text-decoration: none !important;
+  }
+
+  ul a:hover {
+    color: red !important;
+  }
