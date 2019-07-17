@@ -16,11 +16,23 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
+    console.log(req.body)
+    console.log("test")
     db.Book
-      .create(req.body)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+    .create(req.body)
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+    
+    // (dbModel => res.json(dbModel))
   },
+
+  insert: function(req, res){
+    db.Book
+    .save(req)
+    .then(console.log)
+    .catch(err => res.status(422).json(err))
+  },
+
   update: function(req, res) {
     db.Book
       .findOneAndUpdate({ _id: req.params.id }, req.body)
