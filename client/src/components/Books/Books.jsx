@@ -13,21 +13,23 @@ class Books extends Component {
 
     componentDidMount(){
         this.loadBooks();
-    }
+    };
 
 
 
     loadBooks = () =>{
     API.getBooks()
-    .then(res => this.setState({ books: res.data }))
-    .catch(err => console.log(err));
+    // console.log(res)
+    .then(res => this.setState({books: res.data}))
+    // .then(res => (console.log(res)))
+    .catch(err => console.log(err))
     };
 
-render () {
+render (props) {
     return (
-       <h1>{this.state.books}</h1>
+       <h1>test</h1>
     )
-}
+};
 
 }
 

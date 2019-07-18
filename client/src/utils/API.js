@@ -1,10 +1,15 @@
 import axios from "axios";
 
+var i = 0;
+var rows = 20;
+const saveMe = []
+
+
 export default {
   // Gets all books
   searchBooks: function(query){
     console.log(query)
-    return axios.get('https://www.googleapis.com/books/v1/volumes?q=' + query)
+    return axios.get('https://www.googleapis.com/books/v1/volumes?q=' + query + '&maxResults=10')
   },
 
   getBooks: function() {
@@ -20,7 +25,16 @@ export default {
   },
   // Saves a book to the database
   saveBook: function(bookData) {
-    console.log(bookData.data.items[0].volumeInfo)
-    return axios.post("/api/books/", bookData.data.items[0].volumeInfo)
-  }
+    console.log(bookData.data);
+    const data = bookData.data.items
+    // data.forEach(function(data){
+      // })
+      for (i = 0; i < data.length; i++){
+      saveMe.push(data[i].volumeInfo)
+      console.log(saveMe)
+    }
+    axios.post("/api/books/", saveMe)
+}
+
+
 };
