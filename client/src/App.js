@@ -20,9 +20,7 @@ state = {
        <Search  />
        <div className="resultBox">
        <Result>
-       <Book book={this.state.books.map(book =>(
-         <p>{book.title}</p>
-       ))}/>
+       <Book />
        </ Result>
        </div>
       </div>

@@ -5,34 +5,38 @@ import API from "../../utils/API";
 // import { List, ListItem } from "../components/List";
 // import { Input, TextArea, FormBtn } from "../components/Form";
 
-
-class Books extends Component {
-    state = {
-        books: []
-    };
-
-    componentDidMount(){
-        this.loadBooks();
-    };
-
-
-
-    loadBooks = () =>{
-    API.getBooks()
-    // console.log(res)
-    .then(res => this.setState({books: res.data}))
-    // .then(res => (console.log(res)))
-    .catch(err => console.log(err))
-    };
-
-render (props) {
+function Books(props){
     return (
-       <h1>test</h1>
+        <li>{props.book}</li>
     )
-};
-
 }
+// class Books extends Component {
+//     state = {
+//         books: []
+//     };
+
+    
+//     componentDidMount(){
+//         this.loadBooks();
+//     };
 
 
+
+//     loadBooks = () =>{
+//     API.getBooks()
+//     // console.log(res)
+//     .then(res => this.setState({books: res.data}))
+//     // .then(res => this.setState({books: res.data}))
+//     // .then(res => (console.log(res.data)))
+//     .catch(err => console.log(err))
+//     };
+
+// render (props) {
+//     return (
+// <div>{props.book}
+// </div>    )
+// };
+
+// };
 
 export default Books
