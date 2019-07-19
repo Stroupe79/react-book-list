@@ -27,6 +27,7 @@ class Result extends Component {
     // .then(res => (console.log(res.data)))
     .catch(err => console.log(err))
     };
+
     render () {
         console.log(this.state.books)
     return (
@@ -35,16 +36,28 @@ class Result extends Component {
             <div className="panel-body">
             Results:
             </div>
-            {/* <Books book={this.state.books} /> */}
-        </div>
-        </div>
+            <ul>
 
-    )};
+            {this.state.books.map(book => (
+                  <Books key={book._id} title={book.title} authors={book.authors} image={book.imageLinks[0].thumbnail}>
+                    {/* <a href={"/books/" + book._id}> */}
+                      <strong>
+                        {book.title} by {book.authors}
+                      </strong>
+                      {/* </a> */}
+                      </Books>))}
+
+                      </ul>
+</div></div>
+     )
+
+
+    
 
 };
 
 
-
+}
 
 
 // function Result () {

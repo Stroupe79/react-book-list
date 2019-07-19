@@ -7,9 +7,14 @@ import API from "../../utils/API";
 
 function Books(props){
     return (
-        <li>{props.book}</li>
+        <div className="container">
+        <li className="row col-6">{props.title}</li>
+        <li className="col-6">{props.authors}</li>
+        <img className="row" src={props.image}/>
+        </div>
     )
 }
+
 // class Books extends Component {
 //     state = {
 //         books: []
