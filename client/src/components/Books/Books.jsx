@@ -10,9 +10,15 @@ import API from "../../utils/API";
 function Books(props){
     return (
         <div className="container book-panel">
-        <li className="row col-6"><strong>{props.title}</strong></li>
-        <li className="col-6"><strong>{props.authors}</strong></li>
-        <img className="row p-3" src={props.image}/>
+            <div className="row">
+        <li className="col-6"><strong>{props.title}</strong></li>
+        <li className="col-6 pb-2"><strong>{props.authors}</strong></li>
+        </div>
+        <div className="row">
+        <img className="p-3 col-2" src={props.image}/>
+        <div className="col-3"></div>
+        <p className="col-6">{props.desc}</p>
+        </div>
         </div>
     )
 }

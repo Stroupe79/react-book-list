@@ -39,7 +39,7 @@ class Result extends Component {
             <ul>
 
             {this.state.books.map(book => (
-                  <Books key={book._id} title={book.title} authors={book.authors} image={book.imageLinks[0].thumbnail}>
+                  <Books key={book._id} title={book.title} authors={book.authors} image={book.imageLinks[0].thumbnail} desc={book.description}>
                     {/* <a href={"/books/" + book._id}> */}
                       {/* </a> */}
                       </Books>))}
