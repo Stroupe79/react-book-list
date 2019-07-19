@@ -34,16 +34,13 @@ class Result extends Component {
                 <div className="container">
         <div className="result-panel">
             <div className="panel-body">
-            Results:
+            <h2>Results:</h2>
             </div>
             <ul>
 
             {this.state.books.map(book => (
                   <Books key={book._id} title={book.title} authors={book.authors} image={book.imageLinks[0].thumbnail}>
                     {/* <a href={"/books/" + book._id}> */}
-                      <strong>
-                        {book.title} by {book.authors}
-                      </strong>
                       {/* </a> */}
                       </Books>))}
 

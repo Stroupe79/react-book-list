@@ -5,12 +5,14 @@ import API from "../../utils/API";
 // import { List, ListItem } from "../components/List";
 // import { Input, TextArea, FormBtn } from "../components/Form";
 
+
+
 function Books(props){
     return (
-        <div className="container">
-        <li className="row col-6">{props.title}</li>
-        <li className="col-6">{props.authors}</li>
-        <img className="row" src={props.image}/>
+        <div className="container book-panel">
+        <li className="row col-6"><strong>{props.title}</strong></li>
+        <li className="col-6"><strong>{props.authors}</strong></li>
+        <img className="row p-3" src={props.image}/>
         </div>
     )
 }

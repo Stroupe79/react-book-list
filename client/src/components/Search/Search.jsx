@@ -19,10 +19,20 @@ class Search extends Component {
         // console.log(this.state.name)
         event.preventDefault(this.state.name);
           API.searchBooks(this.state.name)
-            .then(res => API.saveBook(res))
+            .then(res => API.saveBook(res)).then(this.loadBooks())
             .catch(err => console.log(err));
         };
     
+        loadBooks = () =>{
+            API.getBooks()
+            // console.log(res)
+            // .then(res => this.setState({books: res.data}))
+            .then(res => this.setState({books: res.data}))
+            // .then(res => (console.log(res.data)))
+            .catch(err => console.log(err))
+            };
+        
+
     handleInputChange = event => {
         const { name, value } = event.target;
         this.setState({
@@ -43,7 +53,7 @@ class Search extends Component {
                 Type a book title or author to search!
                 </div>
                 <input onChange={this.handleInputChange} type="search"></input>
-                <button onClick={this.handleFormSubmit}  className="btn btn-primary">Search!</button>
+                <button onClick={this.handleFormSubmit} onClick={this.loadBooks}  className="btn btn-primary">Search!</button>
             </div>
             </div>
         );
